@@ -39,12 +39,14 @@ function initBoard(orientation) {
         onDrop: onDrop,
         onSnapEnd: onSnapEnd,
         pieceTheme: 'lib/img/chesspieces/wikipedia/{piece}.png',
-        orientation: orientation,
-        width: 560
+        orientation: orientation
     };
     
     board = ChessBoard('board', config);
     game = new Chess();
+    
+    // Resize board to fit container
+    window.setTimeout(() => board.resize(), 0);
     
     // Update UI
     updateStatus();
