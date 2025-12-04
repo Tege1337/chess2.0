@@ -45,8 +45,8 @@ function initBoard(orientation) {
     board = ChessBoard('board', config);
     game = new Chess();
     
-    // Resize board to fit container
-    window.setTimeout(() => board.resize(), 0);
+    // Resize board to fit container after DOM updates
+    window.requestAnimationFrame(() => board.resize());
     
     // Update UI
     updateStatus();
