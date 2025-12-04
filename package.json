@@ -1,0 +1,29 @@
+{
+  "name": "chess2.0",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "chess",
+    "multiplayer",
+    "socket.io",
+    "game"
+  ],
+  "author": "",
+  "license": "ISC",
+  "description": "Online multiplayer chess game where you can play with friends from different devices",
+  "dependencies": {
+    "chess.js": "^1.4.0",
+    "chessboardjs": "^0.0.1",
+    "express": "^5.2.1",
+    "jquery": "^3.7.1",
+    "socket.io": "^4.8.1"
+  },
+  "devDependencies": {
+    "browserify": "^17.0.1"
+  }
+}

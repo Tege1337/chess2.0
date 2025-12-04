@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Chess - Play with Friends</title>
+    <link rel="stylesheet" href="lib/chessboard-0.3.0.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="container">
+        <header>
+            <h1>♟️ Online Chess</h1>
+            <p class="subtitle">Play chess with friends from anywhere!</p>
+        </header>
+
+        <!-- Start Screen -->
+        <div id="startScreen" class="screen active">
+            <div class="card">
+                <h2>Welcome to Online Chess!</h2>
+                <p>Find a random opponent and start playing instantly</p>
+                <button id="findGameBtn" class="btn btn-primary">Find Game</button>
+            </div>
+        </div>
+
+        <!-- Waiting Screen -->
+        <div id="waitingScreen" class="screen">
+            <div class="card">
+                <h2>Looking for opponent...</h2>
+                <div class="loader"></div>
+                <p>Please wait while we find you an opponent</p>
+            </div>
+        </div>
+
+        <!-- Game Screen -->
+        <div id="gameScreen" class="screen">
+            <div class="game-info">
+                <div class="player-info">
+                    <span id="playerColor" class="player-badge"></span>
+                    <span id="turnIndicator" class="turn-indicator"></span>
+                </div>
+                <div id="gameStatus" class="game-status"></div>
+            </div>
+            
+            <div id="boardContainer">
+                <div id="board"></div>
+            </div>
+
+            <div class="game-controls">
+                <button id="newGameBtn" class="btn btn-secondary">New Game</button>
+            </div>
+        </div>
+
+        <!-- Game Over Screen -->
+        <div id="gameOverScreen" class="screen">
+            <div class="card">
+                <h2 id="gameResult"></h2>
+                <div class="game-over-buttons">
+                    <button id="playAgainBtn" class="btn btn-primary">Play Again</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Disconnection Screen -->
+        <div id="disconnectScreen" class="screen">
+            <div class="card">
+                <h2>Opponent Disconnected</h2>
+                <p>Your opponent has left the game</p>
+                <button id="backToMenuBtn" class="btn btn-primary">Back to Menu</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="lib/jquery.min.js"></script>
+    <script src="lib/chessboard-0.3.0.min.js"></script>
+    <script src="lib/chess.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="game.js"></script>
+</body>
+</html>
